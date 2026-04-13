@@ -2,10 +2,10 @@ package com.kalinin.spring.app.model;
 
 import jakarta.persistence.*;
 
-@Entity
+@Entity(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
@@ -18,6 +18,12 @@ public class User {
     private int age;
 
     public User() {
+    }
+
+    public User(String name, String surname, int age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
     }
 
     public void setId(Long id) {
