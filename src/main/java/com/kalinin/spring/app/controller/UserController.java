@@ -33,7 +33,7 @@ public class UserController {
     @GetMapping("/users/add")
     public String showAddForm(Model model) {
         model.addAttribute("user", new User());
-        return "/add";
+        return "add";
     }
 
     @PostMapping("/users/add")
