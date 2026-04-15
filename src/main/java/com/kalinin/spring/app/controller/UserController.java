@@ -53,7 +53,10 @@ public class UserController {
     }
 
     @PostMapping("/users/edit")
-    public String updateUser(Long id, String name, String surname, int age) {
+    public String updateUser(@RequestParam("id") Long id,
+                             @RequestParam("name") String name,
+                             @RequestParam("surname") String surname,
+                             @RequestParam("age") int age) {
         User user = new User(name, surname, age);
         user.setId(id);
         userService.updateUser(user);
